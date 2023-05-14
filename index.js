@@ -12,15 +12,7 @@ https://www.npmjs.com/package/dbd-soft-ui
 ██████ ██████ ██████ ██████ ██████ ██████ ██████ ██████ ██████ ██████ ██████
 `)
 
-    if (
-        require('discord-dashboard').version.startsWith('1')
-        ||
-        require('discord-dashboard').version.startsWith('2.0')
-        ||
-        require('discord-dashboard').version.startsWith('2.1')
-        ||
-        require('discord-dashboard').version.startsWith('2.2')
-    ) throw new TypeError("This theme supports only discord-dashboard@>2.3 # Please update your discord-dashboard module.");
+    if ((Number(((require("discord-dashboard").version).slice(0, 3)))) < 2.3) throw new TypeError("This theme supports only discord-dashboard@>2.3 # Please update your discord-dashboard module.");
 
     return {
         themeCodename: 'dbddrk',
