@@ -4,9 +4,10 @@ module.exports = (themeConfig = {}) => {
     console.log(`
 ██████ ██████ ██████ ██████ ██████ ██████ ██████ ██████ ██████ ██████ ██████
 IMPORTANT
-This DBD theme has been deprecated!
+This DBD Theme is fork of the deprecated prior dark theme! And is therefore
+more likely to run into an error
 
-This theme is no longer supported. Please use dbd-soft-ui Theme instead: 
+If you want to use a less experimental theme, use dbd-soft-ui Theme instead: 
 https://www.npmjs.com/package/dbd-soft-ui
 ██████ ██████ ██████ ██████ ██████ ██████ ██████ ██████ ██████ ██████ ██████
 `)
