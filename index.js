@@ -3,11 +3,10 @@ const fs = require('fs');
 module.exports = (themeConfig = {}) => {
     console.log(`
 ██████ ██████ ██████ ██████ ██████ ██████ ██████ ██████ ██████ ██████ ██████
-IMPORTANT
-This DBD Theme is fork of the deprecated prior dark theme! And is therefore
-more likely to run into an error
-
-If you want to use a less experimental theme, use dbd-soft-ui Theme instead: 
+IMPORTNAT,
+please keep in mind that this is a simple fix for the dark DBD theme that's
+currently deprecated and might not work as expected at all times.
+use dbd-soft-ui Theme instead: 
 https://www.npmjs.com/package/dbd-soft-ui
 ██████ ██████ ██████ ██████ ██████ ██████ ██████ ██████ ██████ ██████ ██████
 `)
