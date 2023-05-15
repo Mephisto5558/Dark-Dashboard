@@ -8,7 +8,7 @@ This theme is no longer fully supported. Please use dbd-soft-ui Theme instead:<b
 ---
 
 
-![Banner](./DarkBanner.png)
+![Banner](./DarkBanner2.png)
 
 <p align="center"><img src="https://nodei.co/npm/dbd-dark-dasboard.png"></p>
 <p align="center"><a href="https://discord.gg/Nkc8MWxHRD"> <img src="https://discordapp.com/api/guilds/803034737261936670/widget.png" alt="Discord server"/></a></p>
