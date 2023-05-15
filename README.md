@@ -2,7 +2,7 @@
 
 **This theme is a fork of the prior deprecated dark dbd theme and is more prone to errors**
 
-This theme is no longer supported. Please use dbd-soft-ui Theme instead:<br/>https://www.npmjs.com/package/dbd-soft-ui
+This theme is no longer fully supported. Please use dbd-soft-ui Theme instead:<br/>https://www.npmjs.com/package/dbd-soft-ui
 
 
 ---
