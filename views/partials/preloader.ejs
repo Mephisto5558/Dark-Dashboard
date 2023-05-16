@@ -54,9 +54,10 @@
 </div>
 
 <script>
-    // Hide the preloader when the content is loaded
     window.addEventListener("load", function() {
         var preloader = document.querySelector(".preloader");
-        preloader.style.display = "none";
+        setTimeout(function() {
+            preloader.style.display = "none";
+        }, 2000);
     });
 </script>
