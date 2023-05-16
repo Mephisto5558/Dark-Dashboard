@@ -43,7 +43,7 @@
 <div class="preloader">
     <br>
     <div style="text-align: center;">
-        <h1 class="font-weight-bolder text-primary" style="color: <%= themeConfig.information.mainColor %> !important;"><%- themeConfig.information.preloader || "Looading Dashboard" %></h1>
+        <h1 class="font-weight-bolder text-primary" style="color: <%= themeConfig.information.mainColor %> !important;"><%- themeConfig.information.preloader || "Loading Dashboard" %></h1>
         <div style="transform: scale(3); padding-top: 30px;">
             <div style="text-align: center; " class="spinner-border"
                  role="status">
@@ -52,3 +52,11 @@
         </div>
     </div>
 </div>
+
+<script>
+    // Hide the preloader when the content is loaded
+    window.addEventListener("load", function() {
+        var preloader = document.querySelector(".preloader");
+        preloader.style.display = "none";
+    });
+</script>
