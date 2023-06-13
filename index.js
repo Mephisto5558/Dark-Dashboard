@@ -33,9 +33,9 @@ https://www.npmjs.com/package/dbd-soft-ui
                 */
 
                 let onlineFiles = {
-                    index: await fetch(`https://adn.siondevelopment.xyz/dbd-dark/src/ejs/index.ejs`),
-                    guild: await fetch(`https://adn.siondevelopment.xyz/dbd-dark/src/ejs/guild.ejs`),
-                    guilds: await fetch(`https://adn.siondevelopment.xyz/dbd-dark/src/ejs/guilds.ejs`)
+                    index: await fetch(`https://raw.githubusercontent.com/Mephisto5558/Dark-Dashboard/main/src/ejs/index.ejs`),
+                    guild: await fetch(`https://raw.githubusercontent.com/Mephisto5558/Dark-Dashboard/main/src/ejs/guild.ejs`),
+                    guilds: await fetch(`https://raw.githubusercontent.com/Mephisto5558/Dark-Dashboard/main/src/ejs/guilds.ejs`)
                 }
 
                 onlineFiles.index = await onlineFiles.index.text();

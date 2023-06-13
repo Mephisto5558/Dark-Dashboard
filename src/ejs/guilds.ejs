@@ -28,21 +28,93 @@
           name='viewport'/>
     <%- include('partials/head.ejs') %>
     <!--     Fonts and icons     -->
-    
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- CSS Files -->
-    <link href="https://raw.githubusercontent.com/Mephisto5558/Dark-Dashboard/main/src/css/servers.css" rel="stylesheet"/>
+    <link href="https://raw.githubusercontent.com/Mephisto5558/Dark-Dashboard/main/src/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://raw.githubusercontent.com/Mephisto5558/Dark-Dashboard/main/src/css/now-ui-dashboard.css" rel="stylesheet"/>
+    <link href="https://raw.githubusercontent.com/Mephisto5558/Dark-Dashboard/main/src/css/theme.css" id="theme" rel="stylesheet">
+    <link href="https://raw.githubusercontent.com/Mephisto5558/Dark-Dashboard/main/src/css/darkreader.css" id="theme" rel="stylesheet">
     <style>
         .panel-header {
             background: <%-themeConfig.information.pageBackGround%> !important;
         }
     </style>
+    <style>
+        .small, small {
+            font-size: 100% !important;
+        }
+
+        .not-invited {
+            background-color: rgb(87, 84, 84) !important;
+        }
+    </style>
+    <style> .server-image {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid rgb(242, 244, 251);
+            filter: drop-shadow(rgba(0, 0, 0, 0.16) 0px 32px 72px);
+        }
+
+        .image-div {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            align-items: center;
+            display: flex;
+            -webkit-box-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            border-radius: 8px;
+            width: 250px;
+            height: 200px;
+            border-radius: 10px;
+        }
+
+        .background {
+            position: relative;
+            width: 250px;
+            height: 200px;
+            display: flex;
+            filter: blur(10px);
+            opacity: 0.3;
+        }
+
+        .server {
+            display: inline-table;
+            margin-right: 40px;
+        }
+
+        .content-server {
+            width: 250px;
+            min-height: 200px;
+            position: relative;
+        }
+
+        .servbtn {
+            position: absolute;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            -moz-transform: translateX(-50%);
+            transform: translateX(-50%);
+        } 
+        
+        @media screen and (max-width: 690px) {
+            .server-div {
+                width: min-content;
+                margin: auto;
+            }
+        }   
+        </style>
     <%- include('partials/css.ejs') %>
 </head>
 
 <body class="">
-<%- include('partials/preloader.ejs') %>
-<% if (themeConfig?.custom_html?.body) { %><%- themeConfig.custom_html.body %><% } %>
+<%- include('partials/body.ejs') %>
 <div class="wrapper ">
     <!-- Side Bar-->
     <%- include('partials/sidebar.ejs', {now:'manage'}) %>
@@ -69,13 +141,17 @@
                                 <% } %>
                             </p>
                         </div>
-                         <% if(themeConfig?.guilds?.type == 'blurlist'){ %>
-                             <%- include('components/serverList/blurlist.ejs', {bot, themeConfig}) %>
-                         <% } else if( themeConfig?.guilds?.type == 'tablelist'){ %>
-                             <%- include('components/serverList/tablelist.ejs', {bot, themeConfig}) %>
-                         <% } else { %>
-                             <%- include('components/serverList/blurlist.ejs', {bot, themeConfig}) %>
-                         <% } %>
+                        <% if(themeConfig.guilds){ %>
+                            <%if(themeConfig.guilds.type == 'blurlist'){%>
+                                <%- include('components/serverList/blurlist.ejs')%>
+                            <%}else if(themeConfig.guilds.type == 'tablelist'){%>
+                                  <%- include('components/serverList/tablelist.ejs')%>
+                            <%} else{ %>
+                                <%- include('components/serverList/blurlist.ejs')%>
+                            <% } %>
+                        <% } else{ %>
+                            <%- include('components/serverList/blurlist.ejs')%>
+                        <% } %>
                     </div>
                 </div>
             </div>
@@ -84,18 +160,18 @@
     </div>
 </div>
 <!--   Core JS Files   -->
-<script src="https://raw.githubusercontent.com/LarsIsHere/Dark-Dashboard/main/src/perfect_scrollbar.js"></script>
+<script src="https://raw.githubusercontent.com/Mephisto5558/Dark-Dashboard/main/src/js/perfect_scrollbar.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.7/dist/sweetalert2.all.min.js"></script>
 <script>
     const ReloadGuildsButtonClicked = () => {
         document.getElementById("ReloadComponent").innerHTML = "Reloading your guilds... Please wait, site will refresh automatically.";
-        fetch("/discord/guilds/reload").then(res => res.json()).then(json => {
-            if (json.error) {
+        fetch("/discord/guilds/reload").then(res=>res.json()).then(json=>{
+            if(json.error){
                 document.getElementById('reloadButtonErrorText').innerHTML = `${json.message} ${json.login_again_text ? "Please try <a href='/discord'>log in again</a>." : null}`;
                 document.getElementById("ReloadComponent").innerHTML = `If you cant see any of your servers try <span
             style="cursor: pointer;" class="bluey"
             onclick="ReloadGuildsButtonClicked();">reloading them</span>.`;
-            } else {
+            }else{
                 window.location.reload(false);
             }
         });

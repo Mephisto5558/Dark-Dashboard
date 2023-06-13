@@ -1,0 +1,66 @@
+.server-image {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid rgb(242, 244, 251);
+    filter: drop-shadow(rgba(0, 0, 0, 0.16) 0px 32px 72px);
+}
+
+.image-div {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    border-radius: 8px;
+    width: 250px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.background {
+    position: relative;
+    width: 250px;
+    height: 200px;
+    display: flex;
+    filter: blur(10px);
+    opacity: 0.3;
+}
+
+.server {
+    display: inline-table;
+    margin-right: 40px;
+}
+
+.content-server {
+    width: 250px;
+    min-height: 200px;
+    position: relative;
+}
+
+.servbtn {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+@media screen and (max-width: 690px) {
+    .server-div {
+        width: min-content;
+        margin: auto;
+    }
+}
+.small, small {
+    font-size: 100% !important;
+}
+
+.not-invited {
+    background-color: rgb(87, 84, 84) !important;
+}
