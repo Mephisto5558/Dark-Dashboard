@@ -31,9 +31,9 @@
         <script src="https://unpkg.com/jsonlint@1.6.3/web/jsonlint.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.3/addon/lint/lint.min.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.3/addon/lint/lint.min.js"></script>
-        <script src="https://assistantscenter.com/embedBuilder/assets/libs/color-picker/color-picker.min.js"></script>
+        <script src="https://raw.githubusercontent.com/Glitchii/embedbuilder/main/assets/libs/color-picker/color-picker.min.js"></script>
         <link rel="stylesheet" href="https://assistantscenter.com/embedBuilder/assets/libs/color-picker/color-picker.min.css">
-        <script src="https://assistantscenter.com/embedBuilder/assets/js/components.js"></script>
+        <script src="https://raw.githubusercontent.com/Glitchii/embedbuilder/main/assets/js/components.js"></script>
         <script>
 // Want to use or contribute to this? https://github.com/Glitchii/embedbuilder
 // If you found an issue, please report it, make a P.R, or use the discussion page. Thanks
