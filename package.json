@@ -8,9 +8,9 @@
   },
   "author": "iMidnight",
   "license": "ISC",
-  "bundleDependencies": false,
+  "bundleDependencies": [],
   "dependencies": {
-    "discord-dashboard": "*",
+    "discord-dashboard": "^2.3.62",
     "node-fetch": "2.6.7"
   },
   "deprecated": false,

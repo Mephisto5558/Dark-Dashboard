@@ -2,6 +2,6 @@
 .vscode
 .github
 node_modules
-package-lock
+package-lock.json
 yarn.lock
 yarn-error.log
